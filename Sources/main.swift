@@ -39,6 +39,8 @@ func main() {
     eval(net: net, marking: marking, nameFile: "CTLFireability.xml")
   case "ReachabilityFireability":
     eval(net: net, marking: marking, nameFile: "ReachabilityFireability.xml")
+  case "Liveness":
+    eval(net: net, marking: marking, nameFile: "Liveness.xml")
   default:
     print("DO_NOT_COMPETE")
   }
