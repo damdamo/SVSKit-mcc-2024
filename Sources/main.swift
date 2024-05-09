@@ -16,7 +16,7 @@ func eval(net: PetriNet, marking: Marking, nameFile: String) {
   let dicCTLFormulas = parserCTL.loadCTL(filePath: nameFile)
 //  let dicCTLFormulas = parserCTL.loadCTL(filePath: "ReachabilityFireability.xml")
   for (nameFormula, ctlFormula) in dicCTLFormulas.sorted(by: {$0.key < $1.key}) {
-    let ctlReduced = CTL(formula: ctlFormula, net: net, canonicityLevel: .full, simplified: false, debug: false).queryReduction()
+    let ctlReduced = CTL(formula: ctlFormula, net: net, canonicityLevel: .none, simplified: true, debug: false).queryReduction()
     let b = ctlReduced.eval(marking: marking)
     print("FORMULA \(nameFormula) \(b.description.uppercased()) TECHNIQUES SEQUENTIAL_PROCESSING IMPLICIT QUERY_REDUCTION STATE_COMPRESSION")
   }
