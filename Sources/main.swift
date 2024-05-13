@@ -24,6 +24,7 @@ func main() {
     for b in data {
       isColoredString += String(UnicodeScalar(UInt8(b)))
     }
+    isColoredString = isColoredString.replacingOccurrences(of: "\n", with: "")
     let arguments = CommandLine.arguments
     let category = arguments[1]
     if isColoredString == "FALSE" {
