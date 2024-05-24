@@ -53,7 +53,6 @@ func main() {
       default:
         print("DO_NOT_COMPETE")
       }
-      print("CANNOT_COMPUTE")
     }
   } else {
     print("CANNOT_COMPUTE")
